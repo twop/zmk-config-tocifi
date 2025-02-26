@@ -678,6 +678,15 @@
             >;
         };
 
+        numbers+symbols {
+            bindings = <
+  &kp PLUS                   &kp MINUS              &kp EQUAL                  &kp UNDERSCORE           &kp STAR           &trans  &trans                        &trans                           &kp PERCENT             &trans
+  &hm LEFT_CONTROL NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_COMMAND NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp NUMBER_5       &trans  &hm RIGHT_SHIFT LEFT_BRACKET  &hm RIGHT_COMMAND RIGHT_BRACKET  &hm LEFT_ALT AMPERSAND  &kp RIGHT_CONTROL
+  &kp NUMBER_6               &kp NUMBER_7           &kp NUMBER_8               &kp NUMBER_9             &kp EXCLAMATION    &trans  &trans                        &trans                           &trans                  &sl 2
+                                                    &trans                     &trans                   &kp NUMBER_0       &trans  &trans                        &trans
+            >;
+        };
+
         FN_R {
             bindings = <
   &trans  &trans  &trans  &trans  &trans    &sys_reset   &kp F7        &kp F8        &kp F9  &kp F10
