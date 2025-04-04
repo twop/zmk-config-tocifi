@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #define DEFAULT_L 0
 
@@ -306,19 +307,19 @@
         default_layer {
             label = "DEF";
             bindings = <
-  &kp Q              &kp W           &kp E                 &kp R                    &kp T                              &kp Y                           &kp U                     &kp I           &kp O           &kp P
-  &hm_pinky LCTRL A  &hm LEFT_ALT S  &hm LEFT_GUI D        &shift_tap LEFT_SHIFT F  &kp G                              &kp H                           &shift_tap RIGHT_SHIFT J  &hm LEFT_GUI K  &hm LEFT_ALT L  &hm_pinky RIGHT_CONTROL SEMICOLON
-  &lt 4 Z            &kp X           &kp C                 &kp V                    &kp B                              &kp N                           &kp M                     &kp COMMA       &kp DOT         &kp SLASH
-                                     &shift_tap LSHFT TAB  &lt 1 BACKSPACE          &hm LS(LA(LC(LEFT_GUI))) ESCAPE    &hm LS(LA(LEFT_CONTROL)) ENTER  &lt 2 SPACE               &lt 3 DELETE
+  &kp Q              &kp W           &kp E            &kp R                    &kp T                              &kp Y                           &kp U                     &kp I            &kp O           &kp P
+  &hm_pinky LCTRL A  &hm LEFT_ALT S  &hm LEFT_GUI D   &shift_tap LEFT_SHIFT F  &kp G                              &kp H                           &shift_tap RIGHT_SHIFT J  &hm LEFT_GUI K   &hm LEFT_ALT L  &hm_pinky RIGHT_CONTROL SEMICOLON
+  &lt 4 Z            &kp X           &kp C            &kp V                    &kp B                              &kp N                           &kp M                     &kp COMMA        &kp DOT         &kp SLASH
+                                     &rgb_ug RGB_TOG  &lt 1 BACKSPACE          &hm LS(LA(LC(LEFT_GUI))) ESCAPE    &hm LS(LA(LEFT_CONTROL)) ENTER  &lt 2 SPACE               &rgb_ug RGB_TOG
             >;
         };
 
         arrows+braces {
             bindings = <
-  &kp BACKSLASH          &kp HASH    &kp DOUBLE_QUOTES  &kp APOSTROPHE  &kp GRAVE    &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE  &kp RIGHT_BRACKET  &kp DOUBLE_QUOTES
-  &hm LCTRL EXCLAMATION  &kp LALT    &kp LGUI           &kp LSHFT       &trans       &kp LEFT          &kp DOWN              &kp UP          &kp RIGHT          &kp APOSTROPHE
-  &kp CARET              &kp DOLLAR  &kp AT             &trans          &trans       &kp PIPE          &kp COLON             &kp LESS_THAN   &kp GREATER_THAN   &kp GRAVE
-                                     &trans             &trans          &trans       &trans            &trans                &trans
+  &kp BACKSLASH          &kp HASH    &kp DOUBLE_QUOTES  &trans     &trans    &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp LEFT_BRACE   &kp RIGHT_BRACKET  &kp BACKSLASH
+  &hm LCTRL EXCLAMATION  &kp LALT    &kp LGUI           &kp LSHFT  &trans    &kp LEFT          &kp DOWN              &kp UP           &kp RIGHT          &kp APOSTROPHE
+  &kp CARET              &kp DOLLAR  &kp AT             &trans     &trans    &kp PIPE          &kp COLON             &kp LESS_THAN    &kp GREATER_THAN   &kp GRAVE
+                                     &rgb_ug RGB_TOG    &trans     &trans    &trans            &kp DOUBLE_QUOTES     &rgb_ug RGB_TOG
             >;
         };
 
