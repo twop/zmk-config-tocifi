@@ -13,8 +13,10 @@
 
 &lt {
     quick-tap-ms = <200>;
-    tapping-term-ms = <200>;
+    tapping-term-ms = <150>;
 };
+
+&mt { quick-tap-ms = <200>; };
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
@@ -29,42 +31,6 @@
             bindings = <&kp>, <&kp>;
 
             quick-tap-ms = <200>;
-        };
-
-        always_tilde: always_tilde {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALWAYS_TILDE";
-            bindings = <&kp LA(N)>, <&kp LA(N)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        always_grave: always_grave {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALWAYS_GRAVE";
-            bindings = <&kp GRAVE>, <&kp GRAVE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        always_acute: always_acute {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALWAYS_ACUTE";
-            bindings = <&kp LA(E)>, <&kp LA(E)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT|MOD_LSFT|MOD_RSFT)>;
-        };
-
-        always_circ: always_circ {
-            compatible = "zmk,behavior-mod-morph";
-            label = "ALWAYS_CIRC";
-            bindings = <&kp LA(I)>, <&kp LA(I)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         shift_tap: shift_tap {
@@ -87,6 +53,17 @@
             bindings = <&kp>, <&kp>;
 
             quick-tap-ms = <200>;
+        };
+
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            require-prior-idle-ms = <100>;
         };
     };
 
@@ -163,7 +140,7 @@
             bindings = <
   &kp Q              &kp W           &kp E            &kp R                    &kp T                              &kp Y                           &kp U                     &kp I            &kp O           &kp P
   &hm_pinky LCTRL A  &hm LEFT_ALT S  &hm LEFT_GUI D   &shift_tap LEFT_SHIFT F  &kp G                              &kp H                           &shift_tap RIGHT_SHIFT J  &hm LEFT_GUI K   &hm LEFT_ALT L  &hm_pinky RIGHT_CONTROL SEMICOLON
-  &lt 4 Z            &kp X           &kp C            &kp V                    &kp B                              &kp N                           &kp M                     &kp COMMA        &kp DOT         &kp SLASH
+  &lt 4 Z            &kp X           &kp C            &kp V                    &kp B                              &kp N                           &kp M                     &kp COMMA        &kp DOT         &as LS(SLASH) SLASH
                                      &rgb_ug RGB_TOG  &lt 1 BACKSPACE          &hm LS(LA(LC(LEFT_GUI))) ESCAPE    &hm LS(LA(LEFT_CONTROL)) ENTER  &lt 2 SPACE               &rgb_ug RGB_TOG
             >;
         };
